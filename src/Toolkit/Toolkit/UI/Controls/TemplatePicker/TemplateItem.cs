@@ -24,9 +24,12 @@ namespace Esri.ArcGISRuntime.Toolkit.UI.Controls
             {
                 // force the geometry type since GeometryType.Unknown doesn't work well with advanced symbology.
                 var geometryType = GeometryType.Unknown;
-                var gdbFeatureTable = Layer == null ? null : Layer.FeatureTable as GeodatabaseFeatureTable;
-                if (gdbFeatureTable != null && gdbFeatureTable.ServiceInfo != null)
-                    geometryType = gdbFeatureTable.ServiceInfo.GeometryType;
+                var gdbFeatureTable = Layer?.FeatureTable as GeodatabaseFeatureTable;
+                if (gdbFeatureTable?.LayerInfo != null)
+                {
+                    geometryType = gdbFeatureTable.LayerInfo.GeometryType;
+                }
+
                 GeometryType = geometryType;
             }
 

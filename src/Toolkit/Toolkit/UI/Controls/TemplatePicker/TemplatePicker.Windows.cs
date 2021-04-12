@@ -115,8 +115,8 @@ namespace Esri.ArcGISRuntime.Toolkit.UI.Controls
         private void RebuildTemplate(FeatureLayer flayer)
         {
             var templates = new List<TemplateItem>();
-            FeatureServiceLayerIdInfo serviceInfo = null;
-            if (flayer.FeatureTable is ArcGISFeatureTable gdbFeatureTable && !gdbFeatureTable.IsEditable && flayer.LoadStatus == LoadStatus.Loaded)
+            ArcGISFeatureServiceInfo serviceInfo = null;
+            if (flayer.FeatureTable is ServiceGeodatabase gdbFeatureTable && !gdbFeatureTable. && flayer.LoadStatus == LoadStatus.Loaded)
             {
                 try
                 {
@@ -223,8 +223,8 @@ namespace Esri.ArcGISRuntime.Toolkit.UI.Controls
         /// </summary>
         public IEnumerable<Layer> Layers
         {
-            get { return (IEnumerable<Layer>)GetValue(LayersProperty); }
-            set { SetValue(LayersProperty, value); }
+            get => (IEnumerable<Layer>)GetValue(LayersProperty);
+            set => SetValue(LayersProperty, value);
         }
 
         /// <summary>
