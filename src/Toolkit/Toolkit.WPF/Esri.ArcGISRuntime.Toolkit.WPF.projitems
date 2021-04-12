@@ -14,6 +14,10 @@
     <Page Include="$(MSBuildThisFileDirectory)Themes\Generic.xaml" SubType="Designer" Generator="XamlIntelliSenseFileGenerator" />
     <Page Include="$(MSBuildThisFileDirectory)**\*.xaml" Exclude="$(MSBuildThisFileDirectory)Themes\Generic.xaml" SubType="Designer" Generator="MSBuild:Compile" />
     <Compile Update="$(MSBuildThisFileDirectory)**\*.xaml.cs" DependentUpon="%(Filename).xaml" />
+    <Page Include="$(MSBuildThisFileDirectory)UI\Controls\TemplatePicker\TemplatePicker.Theme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Resource Include="$(MSBuildThisFileDirectory)**\Assets\*.png" Link="Assets\%(Filename).png" />
   </ItemGroup>
 </Project>
