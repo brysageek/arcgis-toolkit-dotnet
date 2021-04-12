@@ -116,6 +116,7 @@ project.lock.json
 *Resource.Designer.cs
 
 # Visual Studio 2017 auto-generated files
+.vs/
 src/.vs/
 NuGet/
 src/Samples/Toolkit.SampleApp.UWP/BundleArtifacts/
